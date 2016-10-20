@@ -13,10 +13,9 @@ public class EchoClient {
 		BufferedReader br = new BufferedReader(new InputStreamReader(sock.getInputStream(),"UTF-8"));
 		String answer = br.readLine();
 		System.out.println("La stringa ricevuta dal server è: " + answer);
+		System.out.println("Angelo è una merdaccia");
 		
 		sock.close();
 	}
 
 }
-
-angelo è una checca!!
