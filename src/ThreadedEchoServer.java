@@ -16,7 +16,7 @@ public class ThreadedEchoServer implements Runnable {
 			String s = br.readLine();
 			
 			PrintWriter pw = new PrintWriter(new OutputStreamWriter(sock.getOutputStream(), "UTF-8"));
-			pw.println("La stringa ricevuta dal client è: " + s);
+			pw.print(s);
 			// Svuota i buffer, forzando l'invio dei dati
 			pw.flush();
 		} catch (UnsupportedEncodingException e) {
