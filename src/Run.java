@@ -5,14 +5,14 @@ import java.net.Socket;
 public class Run {
 
 	public static void main(String[] args) throws IOException {
-		int port = 7777;
+		int port = 1330;
 		ServerSocket serverSock = new ServerSocket(port);
 		
 		while(true) {
 			System.out.println("Waiting connection...");
 			// Una chiamata bloccante che aspetta fin quando non viene richiesta una connessione
 			Socket sock = serverSock.accept();
-			System.out.println("Accepted connection from client");
+			System.out.println("Accepted connection from " + sock.getRemoteSocketAddress().toString());
 			Thread t = new Thread(new ThreadedEchoServer(sock));
 			t.start();
 		}
